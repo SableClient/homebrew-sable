@@ -1,10 +1,9 @@
 # Generated from packaging/homebrew/sable.rb in SableClient/Sable. Edit it there.
 cask 'sable' do
-  version '1.21.0'
-  sha256 '09420072be13ddfee0818e6a9477d20b56d4419ed934a57c0427e88a07900b73'
+  version "1.22.0"
+  sha256 "2204d2415956fa69b94f05a0d089e41e0ba102595ce8cc326f79e2bae4881a8f"
 
-  url "https://github.com/SableClient/Sable/releases/download/v#{version}/Sable-#{version}-macos-universal.dmg",
-      verified: 'github.com/SableClient/Sable/'
+  url "https://github.com/SableClient/Sable/releases/download/v#{version}/Sable-#{version}-macos-universal.dmg"
   name 'Sable'
   desc 'Client for the Matrix chat network'
   homepage 'https://sable.moe/'
@@ -22,9 +21,10 @@ cask 'sable' do
 
   # The DMG is neither signed nor notarized, so Gatekeeper would refuse to open
   # it. Drop the quarantine flag the download picked up.
-  postflight do
-    system_command '/usr/bin/xattr',
-                   args: ['-dr', 'com.apple.quarantine', "#{appdir}/Sable.app"]
+  postflight_steps do
+    on_macos do
+      run '/usr/bin/xattr', args: ['-dr', 'com.apple.quarantine', "#{appdir}/Sable.app"]
+    end
   end
 
   uninstall quit: 'moe.sable.client'
