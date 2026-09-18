@@ -1,7 +1,7 @@
 # Generated from packaging/homebrew/sable.rb in SableClient/Sable. Edit it there.
 cask 'sable' do
-  version "1.22.1"
-  sha256 "636032370d8b1be702b757e488a6ff9995b569803aa7e0499935aebdbe1c5d1a"
+  version "1.22.2"
+  sha256 "aeede6b1ffaa8caf45a94fb6e778fd757395be6ba2bd9c05c20b52d29ebd39a9"
 
   url "https://github.com/SableClient/Sable/releases/download/v#{version}/Sable-#{version}-macos-universal.dmg"
   name 'Sable'
@@ -23,7 +23,7 @@ cask 'sable' do
   # it. Drop the quarantine flag the download picked up.
   postflight_steps do
     on_macos do
-      run '/usr/bin/xattr', args: ['-dr', 'com.apple.quarantine', "#{appdir}/Sable.app"]
+      run '/usr/bin/xattr', args: ['-dr', 'com.apple.quarantine', '{{appdir}}/Sable.app']
     end
   end
 
