@@ -1,7 +1,7 @@
 # Generated from packaging/homebrew/sable.rb in SableClient/Sable. Edit it there.
 cask 'sable' do
-  version "1.22.9"
-  sha256 "edcd787b3d59de25a00f170a77c3dd9d4d22b43928983ab5e411d43b3169f843"
+  version "1.22.10"
+  sha256 "19b8e8eb33322c7c7877b16e3aa97235c856762f5aa9a555eb32fc48d2c1ed7f"
 
   url "https://github.com/SableClient/Sable/releases/download/v#{version}/Sable-#{version}-macos-universal.dmg"
   name 'Sable'
