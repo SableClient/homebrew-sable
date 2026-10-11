@@ -1,6 +1,6 @@
 cask 'sable' do
   version '2.0.2'
-  sha256 '1034b6c51f86b9271e85a932e09d357758786a9537f90a7f2eaf626edc30dfc4'
+  sha256 '4fe828a9af6403fb97872be830d1192f368b6de9b79cb3661b9156ca5ef3da61'
 
   url "https://git.sable.moe/SableClient/sable-next/releases/download/v#{version}/sable-#{version}-macos-universal.dmg"
   name 'Sable'
