@@ -1,36 +1,28 @@
-# Generated from packaging/homebrew/sable.rb in SableClient/Sable. Edit it there.
 cask 'sable' do
-  version "1.22.10"
-  sha256 "eb1b9f60792eb11193b037fa07f9a1bbb1b96cbabf9ad31e105978c8e2af8126"
+  version '2.1.0'
+  sha256 '9eba8c72cff360617b871ef8c0a744f72162aae93409795a9f3652226e02129e'
 
-  url "https://github.com/SableClient/Sable/releases/download/v#{version}/Sable-#{version}-macos-universal.dmg"
+  url "https://git.sable.moe/SableClient/sable-next/releases/download/v#{version}/sable-electron-#{version}-arm64.dmg"
   name 'Sable'
   desc 'Client for the Matrix chat network'
   homepage 'https://sable.moe/'
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url 'https://git.sable.moe/SableClient/sable-next/releases'
+    regex(%r{/releases/tag/v?(\d+(?:\.\d+)+)}i)
   end
 
-  # The app updates itself through tauri-plugin-updater.
   auto_updates true
+  depends_on arch: :arm64
   depends_on :macos
 
   app 'Sable.app'
-
-  # The DMG is neither signed nor notarized, so Gatekeeper would refuse to open
-  # it. Drop the quarantine flag the download picked up.
-  postflight_steps do
-    on_macos do
-      run '/usr/bin/xattr', args: ['-dr', 'com.apple.quarantine', '{{appdir}}/Sable.app']
-    end
-  end
 
   uninstall quit: 'moe.sable.client'
 
   zap trash: [
     '~/Library/Application Support/moe.sable.client',
+    '~/Library/Application Support/moe.sable.client.electron',
     '~/Library/Caches/moe.sable.client',
     '~/Library/HTTPStorages/moe.sable.client',
     '~/Library/Preferences/moe.sable.client.plist',
