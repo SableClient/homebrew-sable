@@ -1,8 +1,8 @@
 cask 'sable' do
-  version '2.1.4'
-  sha256 'aed17ee623371fce9fe4cb2bfe1330e02d8098cb4a164a4d55adcae0564589e5'
+  version '2.1.5'
+  sha256 '3c9982baf1a3b58ec99588d8347cf8487897ead207d4ebc59ee0fd841cb374d5'
 
-  url "https://git.sable.moe/SableClient/sable-next/releases/download/v#{version}/sable-electron-#{version}-arm64.dmg"
+  url "https://git.sable.moe/SableClient/sable-next/releases/download/v#{version}/sable-#{version}-arm64.dmg"
   name 'Sable'
   desc 'Client for the Matrix chat network'
   homepage 'https://sable.moe/'
