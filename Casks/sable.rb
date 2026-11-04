@@ -1,6 +1,6 @@
 cask 'sable' do
-  version '2.3.2'
-  sha256 '828b3ba1c7072eecf8198e69987e8058c77121a14a4fa844fff39b31336ce390'
+  version '2.3.3'
+  sha256 'dbd3609cb28200e7f2eadb1067c2ef8a793a34317970491e9b41b8475001f204'
 
   url "https://git.sable.moe/SableClient/sable-next/releases/download/v#{version}/sable-#{version}-arm64.dmg"
   name 'Sable'
